@@ -19,18 +19,18 @@ class CheckoutController extends Controller
     public function checkout(Request $request)
     {
         $this->validate($request, [
-            'user_id' => 'required|exists:products,id',
-            'name' => 'required|integer',
+            'user_id' => 'required|exists:users,id',
+            'name' => 'required|string',
             'price' => 'required|integer',
-            'quantity' => 'required|string|min:10|max:255',
-            'color' => 'required|string|min:10|max:255',
-            'size' => 'required|string|min:10|max:255',
-            'imageAlt' => 'required|string|min:10|max:255',
-            'catimageSrc' => 'required|string|max:10'
+            'quantity' => 'required|integer',
+            'color' => 'required|string',
+            'size' => 'required|string',
+            'imageAlt' => 'required|string',
+            'catimageSrc' => 'required|string'
         ]);
 
-        $review = Checkout::create([
-            'product_id' => $request->input('product_id'),
+        $checkout = Checkout::create([
+            'user_id' => $request->input('user_id'),
             'name' => $request->input('name'),
             'price' => $request->input('price'),
             'quantity' => $request->input('quantity'),
@@ -40,6 +40,6 @@ class CheckoutController extends Controller
             'catimageSrc' => $request->input('catimageSrc')
         ]);
 
-        return new CheckoutResource($review);
+        return new CheckoutResource($checkout);
     }
 }
