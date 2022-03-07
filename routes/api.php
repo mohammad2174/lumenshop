@@ -7,6 +7,8 @@ $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router
     $router->post('review', 'ReviewController@review');
     $router->get('checkouts', 'CheckoutController@index');
     $router->post('checkout', 'CheckoutController@checkout');
+    $router->get('orders', 'OrderController@index');
+    $router->post('order', 'OrderController@order');
     $router->post('login', 'UserController@login');
     $router->post('register', 'UserController@register');
     $router->group(['middleware' => 'auth'], function () use ($router) {

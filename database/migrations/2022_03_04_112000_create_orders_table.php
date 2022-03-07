@@ -13,17 +13,21 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('checkouts', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string("name");
-            $table->integer("price");
-            $table->integer("quantity");
-            $table->string("color");
-            $table->string("size");
-            $table->string("imageAlt");
-            $table->string("catimageSrc");
+            $table->integer("shipping");
+            $table->string("apartment");
+            $table->string("city");
+            $table->string("country");
+            $table->string("province");
+            $table->string("postalcode");
+            $table->integer("phone");
+            $table->bigInteger("cardnumber");
+            $table->string("namecard");
+            $table->integer("expiredate");
+            $table->integer("cvc");
             $table->timestamps();
         });
     }
@@ -35,6 +39,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('checkouts');
+        Schema::dropIfExists('orders');
     }
 };
