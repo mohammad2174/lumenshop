@@ -21,6 +21,9 @@ class OrderController extends Controller
         $this->validate($request, [
             'user_id' => 'required|exists:users,id',
             'shipping' => 'required|integer',
+            'email' => 'required|string',
+            'fname' => 'required|string',
+            'lname' => 'required|string',
             'apartment' => 'required|string',
             'city' => 'required|string',
             'country' => 'required|string',
@@ -29,13 +32,19 @@ class OrderController extends Controller
             'cardnumber' => 'required|integer|min:16',
             'phone' => 'required|integer|min:10',
             'namecard' => 'required|string',
-            'expiredate' => 'required|integer',
-            'cvc' => 'required|integer|min:4'
+            'expiredate' => 'required|string',
+            'cvc' => 'required|integer|min:4',
+            'subtotal' => 'required|integer',
+            'taxes' => 'required|integer',
+            'totalamount' => 'required|integer'
         ]);
 
         $checkout = Order::create([
             'user_id' => $request->input('user_id'),
             'shipping' => $request->input('shipping'),
+            'email' => $request->input('email'),
+            'fname' => $request->input('fname'),
+            'lname' => $request->input('lname'),
             'apartment' => $request->input('apartment'),
             'city' => $request->input('city'),
             'country' => $request->input('country'),
@@ -45,7 +54,10 @@ class OrderController extends Controller
             'phone' => $request->input('phone'),
             'namecard' => $request->input('namecard'),
             'expiredate' => $request->input('expiredate'),
-            'cvc' => $request->input('cvc')
+            'cvc' => $request->input('cvc'),
+            'subtotal' => $request->input('subtotal'),
+            'taxes' => $request->input('taxes'),
+            'totalamount' => $request->input('totalamount')
         ]);
 
         return new OrderResource($checkout);
