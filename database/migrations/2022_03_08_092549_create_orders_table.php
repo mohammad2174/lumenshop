@@ -18,6 +18,9 @@ return new class extends Migration
             $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer("shipping");
+            $table->string("email");
+            $table->string("fname");
+            $table->string("lname");
             $table->string("apartment");
             $table->string("city");
             $table->string("country");
@@ -28,6 +31,9 @@ return new class extends Migration
             $table->string("namecard");
             $table->integer("expiredate");
             $table->integer("cvc");
+            $table->integer("subtotal");
+            $table->integer("taxes");
+            $table->integer("totalamount");
             $table->timestamps();
         });
     }
