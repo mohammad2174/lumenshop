@@ -12,9 +12,6 @@ class Order extends JsonResource
             'id' => $this->id,
             'user_id' => $this->user_id,
             'shipping' => $this->shipping,
-            'email' => $this->email,
-            'fname' => $this->fname,
-            'lname' => $this->lname,
             'apartment' => $this->apartment,
             'city' => $this->city,
             'country' => $this->country,
@@ -28,6 +25,7 @@ class Order extends JsonResource
             'subtotal' => $this->subtotal,
             'taxes' => $this->taxes,
             'totalamount' => $this->totalamount,
+            'api_token' => $this->api_token
         ];
     }
 }
