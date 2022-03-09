@@ -21,9 +21,6 @@ class OrderController extends Controller
         $this->validate($request, [
             'user_id' => 'required|exists:users,id',
             'shipping' => 'required|integer',
-            'email' => 'required|string',
-            'fname' => 'required|string',
-            'lname' => 'required|string',
             'apartment' => 'required|string',
             'city' => 'required|string',
             'country' => 'required|string',
@@ -36,7 +33,8 @@ class OrderController extends Controller
             'cvc' => 'required|integer|min:4',
             'subtotal' => 'required|integer',
             'taxes' => 'required|integer',
-            'totalamount' => 'required|integer'
+            'totalamount' => 'required|integer',
+            'api_token' => 'required|string'
         ]);
 
         $checkout = Order::create([

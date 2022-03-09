@@ -14,9 +14,6 @@ class OrderCollection extends ResourceCollection
                     'id' => $item->id,
                     'user_id' => $item->user_id,
                     'shipping' => $item->shipping,
-                    'email' => $item->email,
-                    'fname' => $item->fname,
-                    'lname' => $item->lname,
                     'apartment' => $item->apartment,
                     'city' => $item->city,
                     'country' => $item->country,
@@ -30,6 +27,7 @@ class OrderCollection extends ResourceCollection
                     'subtotal' => $item->subtotal,
                     'taxes' => $item->taxes,
                     'totalamount' => $item->totalamount,
+                    'api_token' => $item->api_token
                 ];
             })
         ];
