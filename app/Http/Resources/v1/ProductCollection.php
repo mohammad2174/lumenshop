@@ -13,6 +13,7 @@ class ProductCollection extends ResourceCollection
                 return [
                     'id' => $item->id,
                     'name' => $item->name,
+                    'brand' => $item->brand,
                     'imageSrc' => $item->imageSrc,
                     'catimageSrc' => $item->catimageSrc,
                     'imageAlt' => $item->imageAlt,
