@@ -15,7 +15,7 @@ class Product extends Model
      * @var string[]
      */
     protected $fillable = [
-        'name', 'imageSrc', 'catimageSrc', 'imageAlt', 'describtion', 'detail', 'title', 'price', 'inventory', 'count', 'color', 'size', 'shipping', 'rating', 'reviewCount', 'message', 'subject'
+        'name', 'brand', 'imageSrc', 'catimageSrc', 'imageAlt', 'describtion', 'detail', 'title', 'price', 'inventory', 'count', 'color', 'size', 'shipping', 'rating', 'reviewCount', 'message', 'subject'
     ];
 
     /**
