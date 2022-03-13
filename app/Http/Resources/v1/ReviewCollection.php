@@ -13,6 +13,7 @@ class ReviewCollection extends ResourceCollection
                 return [
                     'id' => $item->id,
                     'product_id' => $item->product_id,
+                    'name' => $item->name,
                     'rating' => $item->rating,
                     'reviewCount' => $item->reviewCount,
                     'message' => $item->message,

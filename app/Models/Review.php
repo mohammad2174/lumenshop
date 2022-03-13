@@ -15,7 +15,7 @@ class Review extends Model
      * @var string[]
      */
     protected $fillable = [
-        'product_id', 'rating', 'reviewCount', 'message', 'subject'
+        'product_id', 'name', 'rating', 'reviewCount', 'message', 'subject'
     ];
 
     /**
