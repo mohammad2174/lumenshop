@@ -20,6 +20,7 @@ class ReviewController extends Controller
     {
         $this->validate($request, [
             'product_id' => 'required|exists:products,id',
+            'name' => 'required|string',
             'rating' => 'required|integer',
             'reviewCount' => 'required|integer',
             'message' => 'required|string|min:10|max:255',
@@ -28,6 +29,7 @@ class ReviewController extends Controller
 
         $review = Review::create([
             'product_id' => $request->input('product_id'),
+            'name' => $request->input('name'),
             'rating' => $request->input('rating'),
             'reviewCount' => $request->input('reviewCount'),
             'message' => $request->input('message'),
