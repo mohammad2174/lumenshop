@@ -7,6 +7,7 @@ use App\Http\Resources\v1\Checkout as CheckoutResource;
 use App\Http\Resources\v1\CheckoutCollection;
 use Illuminate\Http\Request;
 use App\Models\Checkout;
+use Illuminate\Support\Facades\Redirect;
 
 class CheckoutController extends Controller
 {
@@ -41,5 +42,13 @@ class CheckoutController extends Controller
         ]);
 
         return new CheckoutResource($checkout);
+    }
+
+    public function delete(Request $request)
+    {
+        $product = Checkout::findOrFail($request->id);
+        $product->delete();
+        $products = Checkout::all();
+        return new CheckoutCollection($products);
     }
 }
