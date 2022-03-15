@@ -25,7 +25,8 @@ class Order extends JsonResource
             'subtotal' => $this->subtotal,
             'taxes' => $this->taxes,
             'totalamount' => $this->totalamount,
-            'api_token' => $this->api_token
+            'api_token' => $this->api_token,
+            'date' => $this->date
         ];
     }
 }

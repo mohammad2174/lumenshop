@@ -15,7 +15,7 @@ class Order extends Model
      * @var string[]
      */
     protected $fillable = [
-        'user_id', 'shipping', 'apartment', 'city', 'country', 'province', 'postalcode', 'phone', 'namecard', 'cardnumber', 'expiredate', 'cvc', 'subtotal', 'taxes', 'totalamount', 'api_token'
+        'user_id', 'shipping', 'apartment', 'city', 'country', 'province', 'postalcode', 'phone', 'namecard', 'cardnumber', 'expiredate', 'cvc', 'subtotal', 'taxes', 'totalamount', 'api_token', 'date'
     ];
 
     /**
