@@ -34,7 +34,8 @@ class OrderController extends Controller
             'subtotal' => 'required|integer',
             'taxes' => 'required|integer',
             'totalamount' => 'required|integer',
-            'api_token' => 'required|string'
+            'api_token' => 'required|string',
+            'date' => 'required|string'
         ]);
 
         $checkout = Order::create([
@@ -55,7 +56,8 @@ class OrderController extends Controller
             'cvc' => $request->input('cvc'),
             'subtotal' => $request->input('subtotal'),
             'taxes' => $request->input('taxes'),
-            'totalamount' => $request->input('totalamount')
+            'totalamount' => $request->input('totalamount'),
+            'date' => $request->input('date')
         ]);
 
         return new OrderResource($checkout);

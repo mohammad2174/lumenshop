@@ -27,7 +27,8 @@ class OrderCollection extends ResourceCollection
                     'subtotal' => $item->subtotal,
                     'taxes' => $item->taxes,
                     'totalamount' => $item->totalamount,
-                    'api_token' => $item->api_token
+                    'api_token' => $item->api_token,
+                    'date' => $item->date
                 ];
             })
         ];
