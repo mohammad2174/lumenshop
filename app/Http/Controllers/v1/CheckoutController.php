@@ -5,9 +5,11 @@ namespace App\Http\Controllers\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\v1\Checkout as CheckoutResource;
 use App\Http\Resources\v1\CheckoutCollection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Checkout;
-use Illuminate\Support\Facades\Redirect;
+use App\Models\Product;
+
 
 class CheckoutController extends Controller
 {
@@ -50,5 +52,15 @@ class CheckoutController extends Controller
         $product->delete();
         $products = Checkout::all();
         return new CheckoutCollection($products);
+    }
+
+    public function quantity(Request $request)
+    {
+        $checkout = Checkout::where('id', $request->id)->first();
+        $product = Product::where('name', $checkout->name)->first();
+        if ($product->name === $checkout->name) {
+            $product->inventory = $product->inventory - $request->quantity;
+            return $product->save();
+        }
     }
 }
