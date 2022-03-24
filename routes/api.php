@@ -12,6 +12,7 @@ $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router
     $router->get('orders', 'OrderController@index');
     $router->post('order', 'OrderController@order');
     $router->post('login', 'UserController@login');
+    $router->post('update', 'UserController@update');
     $router->post('register', 'UserController@register');
     $router->group(['middleware' => 'auth'], function () use ($router) {
         $router->get('/user', function () {
